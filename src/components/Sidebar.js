@@ -17,8 +17,8 @@ function Sidebar() {
             <SidebarRow Icon={PhoneInTalkIcon} title='Serious Talk'/>
             <h4>Vibe Mates</h4>
             <div className="sidebar__friends">
-            <SidebarRow src='https://i.pinimg.com/474x/1f/41/7e/1f417e7730688591167c71b5c3e6a735.jpg' title='Lana Red'/>
-            <SidebarRow src='https://miro.medium.com/max/545/1*UNf6kxqv_ujIjKoMI0q97A.png' title='Ines Green'/>
+            <SidebarRow src='https://i.pinimg.com/474x/1f/41/7e/1f417e7730688591167c71b5c3e6a735.jpg' title='Lana Green'/>
+            <SidebarRow src='https://miro.medium.com/max/545/1*UNf6kxqv_ujIjKoMI0q97A.png' title='Ines Blue'/>
             <SidebarRow src='https://pfpmaker.com/_nuxt/img/profile-3-1.3e702c5.png' title='Andrew Black'/>            </div>
             </div>
         </div>

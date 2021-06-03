@@ -4,5 +4,7 @@
 
 .sidebar {
   background-color: #eac9f7c4;
-  padding: 10px 20px;
+  /* height: 100vh; */
+  padding: 25px 10px;
+  flex: 0.33;
 }
