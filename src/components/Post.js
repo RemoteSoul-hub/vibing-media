@@ -1,11 +1,13 @@
 import React from 'react';
 import './Post.css';
 import { Avatar } from '@material-ui/core';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
+import NearMeIcon from '@material-ui/icons/NearMe';
 
 function Post({profilePic, image, username, day, timestamp, message}) {
     return (
         <div className="post">
-            <div className="post__left">
+            <div className="post__top">
                 <Avatar src={profilePic} className="post__avatar" />
                 <div className="post__topInfo">
                     <h2>Day 08</h2>
@@ -13,11 +15,21 @@ function Post({profilePic, image, username, day, timestamp, message}) {
                     <p>Timestamp...</p>
                 </div>
             </div>
-            <div className="post__right">
+            <div className="post__bottom">
                 <p>{message}</p>
             </div>
             <div className="post__image">
-                <img src="" alt="" />
+                <img src={image} alt="" />
+            </div>
+            <div className="post__options">
+                <div className="post__option">
+                    <WhatshotIcon style={{ color: "orange"}}/>
+                    <p>6.9K</p>
+                 </div>
+                 <div className="post__option">
+                    <NearMeIcon style={{color: "royalblue"}}/>
+                    <p>588</p>
+                </div>
             </div>
         </div>
     )
