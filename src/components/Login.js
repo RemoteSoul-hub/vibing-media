@@ -33,6 +33,7 @@ function Login() {
             </div>
             <div className="greetings">
                 <h1>Hello Stranger</h1>
+                <h4>Join the LeVibe Community</h4>
             </div>
             </div>
             <hr />
