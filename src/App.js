@@ -4,13 +4,21 @@ import Header from './components/Header';
 import Sidebar from './components/Sidebar';
 import Feed from './components/Feed';
 import Widgets from './components/Widgets';
+import Login from './components/Login';
+import { useStateValue } from './StateProvider';
 
 
 function App() {
+    // const user = null;
+    const [ {user}, dispatch] = useStateValue();
     return (
         <div className="app">
-
-        <Header />
+            {!user ? 
+            (
+                <Login />
+            ) : (
+                <>
+                <Header />
         <div className="app__body">
             <Sidebar />
             <Feed />
@@ -18,6 +26,8 @@ function App() {
             { /* Feeds Twitter/Reddit iframes*/}
             <Widgets />
             </div>
+            </>
+            )}
             </div>
     );
 };

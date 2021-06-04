@@ -45,10 +45,10 @@ function Header() {
             </div>
             <div className="header__right">
                 <IconButton>
-                    <NotificationsIcon />
+                    <NotificationsIcon style={{color: "gray"}}/>
                 </IconButton>
                 <IconButton>
-                    <ShareIcon />
+                    <ShareIcon style={{color: "gray"}}/>
                 </IconButton>
                 <div className="header__info">
                     <Avatar /> 

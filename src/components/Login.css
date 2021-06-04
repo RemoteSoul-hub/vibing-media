@@ -1,0 +1,97 @@
+.login {
+  background-image: url("../assets/bg.jpg");
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+.container {
+  border-radius: 999px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login > img {
+  width: 200px;
+  height: 200px;
+}
+
+.image {
+  border: none;
+}
+
+.buttons__getapp {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.buttons__getapp > h2 {
+  font-size: 30px;
+}
+
+.login > button {
+  width: 200px;
+  margin-top: 20px;
+  padding: 27px;
+  margin-left: 200px;
+  margin-right: 200px;
+  border: 2px solid black;
+  border-radius: 999px;
+  background-color: #ff6d40bd;
+  cursor: pointer;
+  color: #f1d0ae;
+  box-shadow: 0 5px 7px -7px rgba(0, 0, 0, 0.75);
+  transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
+}
+
+.login > button:hover {
+  background-color: rgba(255, 255, 255, 0.534);
+  box-shadow: rgb(0 0 0 / 80%) 0px 40px 58px -16px,
+    rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+  transform: scale(1.05);
+  border-color: rgba(249, 249, 249, 0.8);
+  color: black;
+}
+
+.greetings {
+  font-size: 50px;
+  color: #7e0032;
+}
+
+span {
+  color: white;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.678);
+  width: 25%;
+  border: 2px solid black;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.login > .MuiSvgIcon-fontSizeLarge {
+  margin: 20px;
+  cursor: pointer;
+  color: #822aa3;
+}
+.login > .MuiSvgIcon-fontSizeLarge:hover {
+  color: black;
+}
+
+hr {
+  border: 3.5px solid purple;
+  opacity: 0.7;
+  border-radius: 5px;
+  width: 75%;
+  margin: auto;
+}
