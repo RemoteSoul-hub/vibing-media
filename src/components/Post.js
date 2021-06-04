@@ -10,9 +10,9 @@ function Post({profilePic, image, username, day, timestamp, message}) {
             <div className="post__top">
                 <Avatar src={profilePic} className="post__avatar" />
                 <div className="post__topInfo">
-                    <h2>Day 08</h2>
+                    <h2>The {new Date(day?.toDate()).getDate()}th</h2>
                     <h3>{username}</h3>
-                    <p>Timestamp...</p>
+                    <p>{new Date(timestamp?.toDate()).toUTCString()}</p>
                 </div>
             </div>
             <div className="post__bottom">

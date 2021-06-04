@@ -4,12 +4,25 @@ import { Avatar } from '@material-ui/core';
 import CreateIcon from '@material-ui/icons/Create';
 import FileCopyIcon from '@material-ui/icons/FileCopy';
 import SentimentVerySatisfiedIcon from '@material-ui/icons/SentimentVerySatisfied';
+import { useStateValue } from '../StateProvider';
+import db from '../firebase';
+import firebase from 'firebase';
 
 function MessageSender() {
+    const [ {user}, dispatch] = useStateValue();
     const [input, setInput] = useState('');
     const [imgURL, setImgURL] = useState('');
     const handleSubmit = e => {
         e.preventDefault();
+
+        db.collection('posts').add({
+            message: input,
+            timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+            day: firebase.firestore.FieldValue.serverTimestamp(),
+            profilePic: user.photoURL,
+            username: user.displayName,
+            image: imgURL,
+        })
 
         // database
         setInput("");
@@ -19,12 +32,12 @@ function MessageSender() {
         <div className="messageSender">
             <div className="messageSender__top">
                 <form>
-                    <input 
+                    <input id="one"
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
-                    type="text" placeholder="Hey, what are you vibing to?"/>
-                    <Avatar />
-                    <input 
+                    type="text" placeholder={`Hey, what are you vibing to, ${user.displayName}?`}/>
+                    <Avatar src={user.photoURL}/>
+                    <input id="two"
                     value={imgURL}
                     onChange={(e) => setImgURL(e.target.value)}
                     type="text" placeholder="Image URL (Optional)"/>
