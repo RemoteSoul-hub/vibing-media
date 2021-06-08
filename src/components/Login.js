@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './Login.css';
 import logo from '../assets/logo.png';
 import GitHubIcon from '@material-ui/icons/GitHub';
@@ -8,8 +8,19 @@ import AlternateEmailIcon from '@material-ui/icons/AlternateEmail';
 import  { auth, provider } from '../firebase';
 import { actionTypes } from '../reducer';
 import { useStateValue } from '../StateProvider';
+import ClimbingBoxLoader from 'react-spinners/ClimbingBoxLoader';
+
 
 function Login() {
+    const [loading, setLoading] = useState(false);
+
+    useEffect(()=> {
+        setLoading(true)
+        setTimeout(()=> {
+            setLoading(false)
+        }, 8000)
+
+    }, [])
     const[state, dispatch] = useStateValue();
     const signIn = () => {
         auth.signInWithPopup(provider)
@@ -21,8 +32,13 @@ function Login() {
             console.log(result);
         }).catch(error => alert(error.message));
     };
-    return (
+    return (       
         <div className="login">
+            {
+         loading ?
+            <ClimbingBoxLoader
+            color={"#822aa3"} loading={loading} size={30} />
+            :    
             <div className="container">
             <div className="image">
            <img src={logo} alt="" />
@@ -33,9 +49,10 @@ function Login() {
             </div>
             <div className="greetings">
                 <h1>Hello Stranger</h1>
-                <h4>Join the LeVibe Community</h4>
+                <h4>Join LeVibe Community</h4>
             </div>
             </div>
+            }
             <hr />
             <div className="links">
             <GitHubIcon fontSize="large" />
